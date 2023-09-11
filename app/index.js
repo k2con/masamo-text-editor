@@ -24,7 +24,6 @@ function buildElement(tag, options = { id: "", classList: "", children: [], attr
   return element;
 }
 
-
 class MasamoTextEditor {
   constructor(selector, options = {}) {
     const defaultOpts = {
@@ -52,7 +51,6 @@ class MasamoTextEditor {
               attributes: {
                 contenteditable: true
               },
-              text: "Hello World"
             }
           },
           {
@@ -171,13 +169,50 @@ class MasamoTextEditor {
         options.classList.toggle("mte-show");
       }
 
+      function formatCode(code) {
+        const formattedCode = code.replace(/</g, "\n<")
+          .replace(/>/g, ">\n")
+          .replace(/^\s*\n/gm, "")
+          .replace(/\t/g, " ");
+        let indentLevel = 0;
+        const lines = formattedCode.split(/\r?\n/);
+        
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim();
+          
+          if (line.startsWith("<")) {
+            if (!line.endsWith("/>")) {
+              if (line.startsWith("</")) {
+                indentLevel--;
+              }
+              
+              lines[i] = "\t".repeat(indentLevel) + line;
+              
+              if (!line.startsWith("</")) {
+                indentLevel++;
+              }
+            } else {
+              lines[i] = "\t".repeat(indentLevel) + line;
+            }
+          } else {
+            lines[i] = "\t".repeat(indentLevel) + line;
+          }
+        }
+        
+        return lines.join("\n");
+      }
+
       function toggleCode(ev) {
         ev.preventDefault();
         const content = container.querySelector(".mte-content");
-        const code = container.querySelector(".mte-code");
-        code.textContent = content.innerHTML;
+        const codeTextarea = container.querySelector(".mte-code");
+        codeTextarea.textContent = content.innerHTML;
+        const code = codeTextarea.value;
+        const formattedCode = formatCode(code)
+
+        codeTextarea.textContent = formattedCode;
         content.classList.toggle("mte-hide");
-        code.classList.toggle("mte-hide");
+        codeTextarea.classList.toggle("mte-hide");
       }
 
       function excectActionAndCloseSelector(ev) {
@@ -2253,10 +2288,23 @@ class MasamoTextEditor {
         }
       });
 
+      const content = this.editor.querySelector(".mte-content");
 
+      // on focus, create a paragraph if there is no content
+      content.addEventListener("focus", () => {
+        console.log(content.innerHTML);
+        if (content.innerHTML === "") {
+          document.execCommand("formatBlock", false, "p");
+        }
+      });
+      
+      // Focus the editor
+      content.focus();
     } catch (error) {
       console.error(error);
       // throw new Error("Please provide a valid selector");
     }
   }
 }
+
+window.MasamoTextEditor = MasamoTextEditor;
