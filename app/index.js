@@ -24,7 +24,6 @@ function buildElement(tag, options = { id: "", classList: "", children: [], attr
   return element;
 }
 
-
 class MasamoTextEditor {
   constructor(selector, options = {}) {
     const defaultOpts = {
@@ -2260,3 +2259,5 @@ class MasamoTextEditor {
     }
   }
 }
+
+window.MasamoTextEditor = MasamoTextEditor;
