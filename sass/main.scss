@@ -1,83 +1,164 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
 .mte-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    @extend .container-fluid, .d-flex, .flex-column, .h-100, .p-0;
 }
+
 .mte-tools {
-    width: 100%;
-    background-color: #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10px;
+    @extend .w-100, .bg-secondary, .text-white, .rounded-top;
 }
-.mte-tool-line {
-    display: flex;
-    align-items: center;
-    margin: 5px 0 5px 0;
-    padding: 5px 0;
+
+.mte-content {
+    @extend .bg-white, .border, .rounded-bottom, .h-50, .overflow-auto, .p-3;
+    font-family: sans-serif; /* 2 */
+    line-height: 1.15; /* 3 */
+    -webkit-text-size-adjust: 100%; /* 4 */
+    -ms-text-size-adjust: 100%; /* 4 */
+    margin: 0; /* 1 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left; /* 3 */
+    background-color: #fff; /* 2 */
+    hr {
+      box-sizing: content-box; /* 1 */
+      height: 0; /* 1 */
+      overflow: visible; /* 2 */
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+      margin-bottom: .5rem;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    ol,
+    ul,
+    dl {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    ol ol,
+    ul ul,
+    ol ul,
+    ul ol {
+      margin-bottom: 0;
+    }
+    blockquote {
+      margin: 0 0 1rem;
+    }
+    b,
+    strong {
+      font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      background-color: transparent; /* Remove the gray background on active links in IE 10. */
+      -webkit-text-decoration-skip: objects; /* Remove gaps in links underline in iOS 8+ and Safari 8+. */
+    }
+    a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+    a:not([href]):not([tabindex]) {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+      color: inherit;
+      text-decoration: none;
+    }
+    a:not([href]):not([tabindex]):focus {
+      outline: 0;
+    }
+    pre,
+    code,
+    kbd,
+    samp {
+      font-family: monospace, monospace; /* Correct the inheritance and scaling of font size in all browsers. */
+      font-size: 1em; /* Correct the odd `em` font sizing in all browsers. */
+    }
+    pre {
+      /* Remove browser default top margin */
+      margin-top: 0;
+      /* Reset browser default of `1em` to use `rem`s */    
+      margin-bottom: 1rem; 
+      /* Don't allow content to break outside */    
+      overflow: auto;
+      /* We have @viewport set which causes scrollbars to overlap content in IE11 and Edge, so we force a non-overlapping, non-auto-hiding scrollbar to counteract. */      
+      -ms-overflow-style: scrollbar;
+    }
+    img {
+      vertical-align: middle;
+      border-style: none; /* Remove the border on images inside links in IE 10-. */
+    }
+    svg:not(:root) {
+      overflow: hidden; /* Hide the overflow in IE */
+    }
+    table {
+      border-collapse: collapse; /* Prevent double borders */
+    }
+    caption {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      color: #868e96;
+      text-align: left;
+      caption-side: bottom;
+    }
+    th {
+      /* Matches default `<td>` alignment by inheriting from the `<body>`, or the closest parent with a set `text-align`. */
+      text-align: inherit;
+    }
+    [hidden] {
+      display: none !important;
+    }
 }
-.mte-tool-group {
-    display: flex;
-    align-items: center;
-    margin: 0 2.5px;
-    padding-right: 5px;
-}
-.mte-tool-selector {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-right: 5px;
-}
-.mte-tool-selector-trigger {
-    display: flex;
-    align-items: center;
-}
-.mte-tool-selector-options {
-    position: absolute;
-    width: 300px !important;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #f1f1f1;
-    display: none;
-    flex-direction: column;
-    padding: 5px 0;
-}
-.mte-show {
-    display: flex !important;
-}
-.mte-hide {
-    display: none !important;
-}
+
 .mte-code {
     font-family: monospace;
 }
+
+.mte-tool-line {
+    @extend .d-flex, .flex-row, .align-items-center, .p-2;
+}
+
+.mte-tool-group {
+    @extend .d-flex, .flex-row, .align-items-center, .px-2;
+}
+
+.mte-tool-selector {
+    @extend .d-flex, .flex-row, .align-items-center, .pe-2, .position-relative;
+}
+
+.mte-tool-selector-trigger {
+    @extend .d-flex, .flex-row, .align-items-center;
+}
+
+.mte-tool-selector-options {
+    @extend .position-absolute, .top-100, .start-0, .bg-white, .flex-column;
+    width: 300px !important;
+    display: none;
+}
+
+.mte-show {
+    @extend .d-flex;
+}
+
+.mte-hide {
+    @extend .d-none;
+}
+
 .mte-tool-selector-option {
-    padding: 5px 10px;
-    text-align: left;
-    cursor: pointer;
+    @extend .w-100, .btn, .btn-light, .border-0, .border-bottom, .text-start;
+    // padding: 5px 10px;
+    // text-align: left;
+    // cursor: pointer;
 }
-.mte-content {
-    width: 100%;
-    height: 100%;
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    border: #333 1px solid;
-}
-.mte-content ol, .mte-content ul {
-    padding-left: 20px;
-}
-.mte-content ol {
-    list-style-type: decimal;
-}
-.mte-content ul {
-    list-style-type: disc;
-}
+
 .mte-tool {
-    cursor: pointer;
-    padding: 3px 5px;
-    margin-right: 5px;
+    @extend .btn, .btn-light, .btn-sm, .text-nowrap, .mx-1;
 }
