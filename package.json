@@ -2,9 +2,12 @@
   "name": "masamo-text-editor",
   "version": "1.0.0",
   "description": "Simple javascript Text Editor from Masamo",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm run webpack\" \"npm run sass\" \"npm run server\"",
+    "server": "nodemon server.js",
+    "webpack": "webpack-cli -w --config ./webpack.config.js --mode development --env=development",
+    "sass": "sass -w sass/main.scss dist/css/style.css"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +22,7 @@
     "@babel/preset-env": "^7.22.15",
     "concurrently": "^8.2.1",
     "html-webpack-plugin": "^5.5.3",
+    "nodemon": "^3.0.1",
     "sass": "^1.66.1",
     "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.88.2",
