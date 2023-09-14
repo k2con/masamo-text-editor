@@ -1,1 +1,0 @@
-const masamoEditor = new MasamoTextEditor("#masamo-editor");
