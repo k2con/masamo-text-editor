@@ -237,3 +237,70 @@ This action performs the following:
 - Tags the release with its name
 - Back-merges VERSION into develop
 - Removes the hotfix branch
+
+### Support Branches
+
+Support branches are used to prepare a new production release version of the previous release while the current release is out already. This is necessary in case immediate bugfixes for the current release are necessary and there exist changes on develop that cannot be immediately released.
+
+Creating the support branch
+
+```bash
+$ git flow support start VERSION [BASENAME]
+```
+
+This action creates a new support branch based on master and switches to it. Optionally you can specify a [BASENAME] to start from.
+
+Switching between support branches
+
+```bash
+$ git flow support checkout VERSION
+```
+
+Finishing a support branch
+
+```bash
+$ git flow support finish VERSION
+```
+
+This action performs the following:
+
+- Merges VERSION into master
+- Tags the release with its name
+- Back-merges VERSION into develop
+- Removes the support branch
+
+### Bugfix Branches
+
+Bugfix branches are used to fix bugs from the production release. They are branched from the production tag of the master branch.
+
+Creating the bugfix branch
+
+```bash
+$ git flow bugfix start VERSION [BASENAME]
+```
+
+This action creates a new bugfix branch based on master and switches to it. Optionally you can specify a [BASENAME] to start from.
+
+Switching between bugfix branches
+
+```bash
+$ git flow bugfix checkout VERSION
+```
+
+Finishing a bugfix branch
+
+```bash
+$ git flow bugfix finish VERSION
+```
+
+This action performs the following:
+
+- Merges VERSION into master
+- Tags the release with its name
+- Back-merges VERSION into develop
+- Removes the bugfix branch
+
+### Version Tagging
+
+Version tags are created automatically by the finish commands of the release, hotfix and support branches. It is not recommended to create a version tag manually.
+

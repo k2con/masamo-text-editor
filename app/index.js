@@ -1,72 +1,21 @@
-function buildElement(tag, options = { id: "", classList: "", children: [], attributes: {}, events: {}, text: "" }) {
-  const { id = "", classList = "", children = [], attributes = {}, events = {}, text = "" } = options;
-  const element = document.createElement(tag);
-  element.id = id;
-  element.innerHTML = text.replace(/\\x([0-9A-Fa-f]{2})/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));;
-  classList?.split(" ").forEach((className) => {
-    if (className) element.classList.add(className);
-  });
-  Object.entries(attributes).forEach(([key, value]) => {
-    if (key === "disabled" || key === "checked") {
-      if (value) element.setAttribute(key, value);
-    }
-    else element.setAttribute(key, value);
-  });
-  Object.entries(events).forEach(([key, value]) => {
-    element.removeEventListener(key, value);
-    element.addEventListener(key, value);
-  });
-  // # children is an array of objects with tag and options
-  children?.forEach((child) => {
-    const { tag, options } = child;
-    element.append(buildElement(tag, options));
-  });
-  return element;
-}
+import { buildElement } from "./utils";
+import { EditorContainer } from "./components";
 
 class MasamoTextEditor {
   constructor(selector, options = {}) {
     const defaultOpts = {
       useH1: true,
+      defaultContent: "",
     };
 
     this.options = { ...defaultOpts, ...options };
+
+    const { defaultContent = "" } = this.options;
     try {
       this.editor = document.querySelector(selector);
 
       // Create the main container element
-      const container = buildElement("div", {
-        classList: "mte-container",
-        children: [
-          {
-            tag: "div",
-            options: {
-              classList: "mte-tools"
-            }
-          },
-          {
-            tag: "div",
-            options: {
-              classList: "mte-content",
-              attributes: {
-                contenteditable: true
-              },
-            }
-          },
-          {
-            tag: "textarea",
-            options: {
-              classList: "mte-code mte-hide",
-              attributes: {
-                name: "mte-code",
-                id: "mte-code",
-                cols: 30,
-                rows: 10
-              }
-            }
-          }
-        ]
-      });
+      const container = EditorContainer({ defaultContent });
 
       // Create the tool lines
       const toolLine1 = buildElement("div", {
