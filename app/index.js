@@ -5,14 +5,17 @@ class MasamoTextEditor {
   constructor(selector, options = {}) {
     const defaultOpts = {
       useH1: true,
+      defaultContent: "",
     };
 
     this.options = { ...defaultOpts, ...options };
+
+    const { defaultContent = "" } = this.options;
     try {
       this.editor = document.querySelector(selector);
 
       // Create the main container element
-      const container = EditorContainer();
+      const container = EditorContainer({ defaultContent });
 
       // Create the tool lines
       const toolLine1 = buildElement("div", {

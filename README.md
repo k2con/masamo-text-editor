@@ -1,4 +1,4 @@
-# masamo-text-editor
+# masamo-text-editor v1.0.1
 
 This is a text editor written in javascript.
 

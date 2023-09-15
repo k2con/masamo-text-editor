@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2023-09-10
+
+### Added
+
+- add `clors` option. It is an object that contains the colors that will be added in the editor. Example: `colors: { primary: '#ff0000' }`
+- add `defaultContent` option. Its a string with the html that will be added to the editor when it loads. Example: `defaultContent: '<p>Some text</p>'`
+- add utils directory where the utils functions will be stored.
+    - move `buildElement` function to utils directory
+- add `components` directory where the editor components will be stored.
+    - add `EditorContainer` component. It is the editor container. It contains the editor header and the editor body with the contenteditable div and the code view textarea. 
+
 ## [1.0.0] - 2023-09-10
 
 ### Added

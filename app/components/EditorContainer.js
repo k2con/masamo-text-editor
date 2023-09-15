@@ -1,6 +1,8 @@
 import { buildElement } from "../utils";
 
-export default function () {
+export default function (props = { defaultContent: "" }) {
+  const { defaultContent = "" } = props;
+  console.log(defaultContent);
   const container = buildElement("div", {
     classList: "mte-container",
     children: [
@@ -14,6 +16,7 @@ export default function () {
         tag: "div",
         options: {
           classList: "mte-content",
+          text: defaultContent,
           attributes: {
             contenteditable: true
           },
