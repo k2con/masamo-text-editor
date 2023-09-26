@@ -1,8 +1,13 @@
-export default function buildElement(tag, options = { id: "", classList: "", children: [], attributes: {}, events: {}, text: "" }) {
-  const { id = "", classList = "", children = [], attributes = {}, events = {}, text = "" } = options;
+export default function buildElement(tag, options = { id: "", classList: "", children: [], attributes: {}, events: {}, text: "", html: "", svg: null }) {
+  const { id = "", classList = "", children = [], attributes = {}, events = {}, text = "", html = "", svg = null } = options;
   const element = document.createElement(tag);
   element.id = id;
-  element.innerHTML = text.replace(/\\x([0-9A-Fa-f]{2})/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));;
+  element.innerHTML = text.replace(/\\x([0-9A-Fa-f]{2})/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)));
+  if (html) element.innerHTML = html;
+  if (svg) {
+    const doc = new DOMParser().parseFromString(svg, 'application/xml');
+    element.appendChild(doc.documentElement);
+  }
   classList?.split(" ").forEach((className) => {
     if (className) element.classList.add(className);
   });
