@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2023-09-10
+
+### Added
+
+- fix. Code modularization
+- add. Custom icons
+
 ## [1.0.1] - 2023-09-10
 
 ### Added

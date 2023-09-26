@@ -1,4 +1,4 @@
-# masamo-text-editor v1.0.1
+# masamo-text-editor v1.0.e
 
 This is a text editor written in javascript.
 
@@ -62,10 +62,10 @@ const editor = new MasamoTextEditor({
 - [x] format html code when user toggles the code view
 - [x] focus the ditor when it loads
 - [x] add a `p` element when editor is focused and it is empty
-- [ ] modularize the code
+- [x] modularize the code
 - [ ] get html from the editor with a method
 - [ ] add `useCodeView` option. false as default. If true, the editor will use code view as default.
-- [ ] add custom icons for the toolbar
+- [x] add custom icons for the toolbar
 - [ ] add emojis to the toolbar
 - [ ] add custom fonts option
 - [ ] improve the color picker
