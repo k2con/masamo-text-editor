@@ -1,5 +1,5 @@
 const path = require("path");
-const fs = require("fs");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TersePlugin = require("terser-webpack-plugin");
@@ -26,9 +26,7 @@ module.exports = {
   optimization: {
     minimize: true,
     minimizer: [
-      new TersePlugin({
-        include: /\.min\.js$/,
-      }),
+      new TersePlugin(),
     ],
     splitChunks: {
       chunks: "all",
@@ -46,6 +44,11 @@ module.exports = {
         removeComments: true,
         removeRedundantAttributes: true,
       },
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "app/img", to: "img/" }
+      ],
     }),
   ],
   stats: {

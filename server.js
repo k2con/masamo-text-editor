@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, "dist")));
-app.use("/assets", express.static("src"));
+app.use("/assets", express.static("public"));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
