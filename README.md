@@ -78,6 +78,12 @@ const editor = new MasamoTextEditor({
 - [ ] add table support
 - [ ] add video support
 - [ ] add custom css option
+- [ ] responsive design
+- [ ] custom css for the editor
+- [ ] add a `useDarkMode` option. false as default. If true, the editor will use dark mode.
+- [ ] add spell check
+- [ ] add code support and syntax highlighting
+- [ ] add a `useFullScreen` option. false as default. If true, the editor will use full screen mode.
 
 ## contributing
 
