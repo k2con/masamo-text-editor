@@ -17,7 +17,7 @@ export default function Paste(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Paste.svg",
+              src: "/assets/mte/img/Paste.svg",
               width: "16",
               height: "16"
             }

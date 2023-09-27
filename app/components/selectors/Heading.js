@@ -22,7 +22,7 @@ export default function Heading(props = {}, options = {}) {
                 tag: "img",
                 options: {
                   attributes: {
-                    src: "/img/Headings.svg",
+                    src: "/assets/mte/img/Headings.svg",
                     width: "16",
                     height: "16"
                   }

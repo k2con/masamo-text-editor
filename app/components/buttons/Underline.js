@@ -17,7 +17,7 @@ export default  function Underline(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Underline.svg",
+              src: "/assets/mte/img/Underline.svg",
               width: "16",
               height: "16"
             }

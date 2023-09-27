@@ -21,7 +21,7 @@ export default function FontColor(props = {}, options = {}) {
                 tag: "img",
                 options: {
                   attributes: {
-                    src: "/img/FontColor.svg",
+                    src: "/assets/mte/img/FontColor.svg",
                     width: "16",
                     height: "16"
                   }

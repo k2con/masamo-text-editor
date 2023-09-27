@@ -17,7 +17,7 @@ export default function Redo(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Redo.svg",
+              src: "/assets/mte/img/Redo.svg",
               width: "16",
               height: "16"
             }

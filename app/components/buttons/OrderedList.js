@@ -17,7 +17,7 @@ export default function OrderedList(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/OrderedList.svg",
+              src: "/assets/mte/img/OrderedList.svg",
               width: "16",
               height: "16"
             }

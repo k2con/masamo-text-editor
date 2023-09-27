@@ -21,7 +21,7 @@ export default function FontFamily(props = {}) {
                 tag: "img",
                 options: {
                   attributes: {
-                    src: "/img/FontFamily.svg",
+                    src: "/assets/mte/img/FontFamily.svg",
                     width: "16",
                     height: "16"
                   }

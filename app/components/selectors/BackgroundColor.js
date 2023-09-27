@@ -21,7 +21,7 @@ export default function BackgroundColor(props = {}, options = {}) {
                 tag: "img",
                 options: {
                   attributes: {
-                    src: "/img/BackgroundColor.svg",
+                    src: "/assets/mte/img/BackgroundColor.svg",
                     width: "16",
                     height: "16"
                   }

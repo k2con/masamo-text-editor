@@ -16,7 +16,7 @@ export default function Bold(props =  {}) {
           tag:  "img",
           options: {
             attributes: {
-              src: "/img/bold.svg",
+              src: "/assets/mte/img/bold.svg",
               width: "16",
               height: "16"
             }

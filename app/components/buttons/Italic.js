@@ -17,7 +17,7 @@ export default function Italic(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Italic.svg",
+              src: "/assets/mte/img/Italic.svg",
               width: "16",
               height: "16"
             }

@@ -17,7 +17,7 @@ export default function Link(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/InsertLink.svg",
+              src: "/assets/mte/img/InsertLink.svg",
               width: "16",
               height: "16"
             }

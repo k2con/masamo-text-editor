@@ -17,7 +17,7 @@ export default function UnorderedList(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/UnorderedList.svg",
+              src: "/assets/mte/img/UnorderedList.svg",
               width: "16",
               height: "16"
             }

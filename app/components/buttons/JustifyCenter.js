@@ -17,7 +17,7 @@ export default function JustifyCenter(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/AlignCenter.svg",
+              src: "/assets/mte/img/AlignCenter.svg",
               width: "16",
               height: "16"
             }

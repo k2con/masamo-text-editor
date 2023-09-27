@@ -21,7 +21,7 @@ export default function FontSize(props = {}) {
                 tag: "img",
                 options: {
                   attributes: {
-                    src: "/img/FontSize.svg",
+                    src: "/assets/mte/img/FontSize.svg",
                     width: "16",
                     height: "16"
                   }

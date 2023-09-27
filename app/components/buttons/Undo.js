@@ -17,7 +17,7 @@ export default function Undo(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Undo.svg",
+              src: "/assets/mte/img/Undo.svg",
               width: "16",
               height: "16"
             }

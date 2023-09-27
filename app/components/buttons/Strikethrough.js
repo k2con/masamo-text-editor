@@ -17,7 +17,7 @@ export default function Strikethrough(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Strikethrough.svg",
+              src: "/assets/mte/img/Strikethrough.svg",
               width: "16",
               height: "16"
             }

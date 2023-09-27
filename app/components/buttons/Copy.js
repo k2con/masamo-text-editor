@@ -17,7 +17,7 @@ export default function Copy(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Copy.svg",
+              src: "/assets/mte/img/Copy.svg",
               width: "16",
               height: "16"
             }

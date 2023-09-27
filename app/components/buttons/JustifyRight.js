@@ -17,7 +17,7 @@ export default function JustifyRight(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/AlignRight.svg",
+              src: "/assets/mte/img/AlignRight.svg",
               width: "16",
               height: "16"
             }

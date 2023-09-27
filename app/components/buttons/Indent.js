@@ -17,7 +17,7 @@ export default function Indent(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Indent.svg",
+              src: "/assets/mte/img/Indent.svg",
               width: "16",
               height: "16"
             }

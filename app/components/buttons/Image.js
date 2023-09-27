@@ -16,7 +16,7 @@ export default function Image(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/InsertImage.svg",
+              src: "/assets/mte/img/InsertImage.svg",
               width: "16",
               height: "16"
             }

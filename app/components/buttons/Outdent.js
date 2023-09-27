@@ -17,7 +17,7 @@ export default function Outdent(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Outdent.svg",
+              src: "/assets/mte/img/Outdent.svg",
               width: "16",
               height: "16"
             }

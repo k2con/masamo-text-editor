@@ -17,7 +17,7 @@ export default function Cut(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/Cut.svg",
+              src: "/assets/mte/img/Cut.svg",
               width: "16",
               height: "16"
             }

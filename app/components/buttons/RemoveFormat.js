@@ -17,7 +17,7 @@ export default function RemoveFormat(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/RemoveFormating.svg",
+              src: "/assets/mte/img/RemoveFormating.svg",
               width: "16",
               height: "16"
             }

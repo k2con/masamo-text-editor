@@ -16,7 +16,7 @@ export default function Code(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/html.svg",
+              src: "/assets/mte/img/html.svg",
               width: "16",
               height: "16"
             }

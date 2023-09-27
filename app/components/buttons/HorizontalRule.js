@@ -17,7 +17,7 @@ export default function HorizontalRule(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/HorizontalRule.svg",
+              src: "/assets/mte/img/HorizontalRule.svg",
               width: "16",
               height: "16"
             }

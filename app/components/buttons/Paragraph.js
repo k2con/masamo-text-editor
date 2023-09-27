@@ -17,7 +17,7 @@ export default function Paragraph(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/ParagraphFormat.svg",
+              src: "/assets/mte/img/ParagraphFormat.svg",
               width: "16",
               height: "16"
             }
