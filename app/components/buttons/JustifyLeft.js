@@ -16,7 +16,7 @@ export default function JustifyLeft(props = {}) {
           tag: "img",
           options: {
             attributes: {
-              src: "/img/assets/mte/AlignLeft.svg",
+              src: "/assets/mte/img/AlignLeft.svg",
               width: "16",
               height: "16"
             }
