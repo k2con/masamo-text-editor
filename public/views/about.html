@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.html') %>
+<body class="overflow-auto">
+    <main class="w-100 d-flex flex-column justify-content-between">
+        <%- include('./partials/header.html') %>
+        
+        <div class="container py-5">
+            <h2 class="text-center">Masamo Text Editor</h2>
+            <p class="lead text-center">
+                A simple and easy to use WYSIWYG editor built with JavaScript.
+            </p>
+            <hr class="my-4">
+            <h3>Getting statrted</h3>
+            <hr>
+            <p>
+                Get statrted by including our production ready CSS and JavaScript files in your HTML file.
+            </p>
+
+            <p>
+                1. Create a new HTML file.
+            </p>
+
+            <pre class="rounded border py-3">
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="utf-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                        &lt;title&gt;Masamo Text Editor&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div id="masamo-editor"&gt;
+                            &lt;h2 class="text-center"&gt;Masamo Text Editor&lt;/h2&gt;
+                            &lt;p class="lead text-center"&gt;
+                                A simple and easy to use WYSIWYG editor built with JavaScript.
+                            &lt;/p&gt;
+                            &lt;hr class="my-4"&gt;
+                        &lt;/div&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <p>
+                2. Include the CSS and JavaScript files in the head and body tags respectively.
+            </p>
+
+            <pre class="rounded border py-3">
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="utf-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                        &lt;title&gt;Masamo Text Editor&lt;/title&gt;
+                        &lt;link rel="stylesheet" href="<%= baseUrl %>/assets/mte/css/style.css"&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div id="masamo-editor"&gt;
+                            &lt;h2 class="text-center"&gt;Masamo Text Editor&lt;/h2&gt;
+                            &lt;p class="lead text-center"&gt;
+                                A simple and easy to use WYSIWYG editor built with JavaScript.
+                            &lt;/p&gt;
+                            &lt;hr class="my-4"&gt;
+                        &lt;/div&gt;
+                        &lt;script src="<%= baseUrl %>/assets/mte/js/app.js"&gt;&lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <p>
+                3. Create a new JavaScript with the following code and include it in the body tag after the app.js file.
+            </p>
+
+            <pre class="rounded border py-3">
+                <code>
+                    const editor = new MasamoEditor("#masamo-editor");
+                </code>
+            </pre>
+            
+            <p>
+                Your HTML file should look like this:
+            </p>
+
+            <pre class="rounded border py-3">
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="utf-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                        &lt;title&gt;Masamo Text Editor&lt;/title&gt;
+                        &lt;link rel="stylesheet" href="<%= baseUrl %>/assets/mte/css/style.css"&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;div id="masamo-editor"&gt;
+                            &lt;h2 class="text-center"&gt;Masamo Text Editor&lt;/h2&gt;
+                            &lt;p class="lead text-center"&gt;
+                                A simple and easy to use WYSIWYG editor built with JavaScript.
+                            &lt;/p&gt;
+                            &lt;hr class="my-4"&gt;
+                        &lt;/div&gt;
+                        &lt;script src="<%= baseUrl %>/assets/mte/js/app.js"&gt;&lt;/script&gt;
+                        &lt;script src="https://example.com/js/index.js"&gt;&lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <p>
+                4. Open the HTML file in your browser and you should see the editor.
+            </p>
+
+        </div>
+
+        <%- include('./partials/footer.html') %>
+    </main>
+    <%- include('./partials/scripts.html') %>
+</body>
+</html>
