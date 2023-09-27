@@ -16,13 +16,29 @@
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div id="masamo-editor">
-            <h1 class="text-center">Masamo Text Editor</h1>
-            <hr>
+<body class="overflow-auto">
+    <main class="w-100 d-flex flex-column justify-content-between">
+        <header class="w-100 bg-dark sticky-top py-4">
+            <div class="container d-flex">
+                <a href="https://masamo.tech" class="text-light text-decoration-none">
+                    <h1 class="h4 text-uppercase">Masamo</h1>
+                </a>
+            </div>
+        </header>
+        <div class="container py-5">
+            <div id="masamo-editor">
+                <h2 class="text-center">Masamo Text Editor</h2>
+                <hr>
+            </div>
         </div>
-    </div>
+        <footer class="border-top py-3">
+            <p class="m-0 text-center">
+                <small>
+                    <a href="https://masamo.tech" class="text-decoration-none">Masamo</a> 2023
+                </small>
+            </p>
+        </footer>
+    </main>
     <script src="/assets/mte/js/app.js"></script>
     <script src="/assets/index.js"></script>
 </body>
